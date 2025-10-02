@@ -40,6 +40,8 @@ roachprod run --insecure ${CLUSTER}:$nodes 'sudo apt-get -qq update'
 roachprod run --insecure ${CLUSTER}:$nodes 'sudo apt-get -qq install -y openjdk-21-jre-headless'
 roachprod put ${CLUSTER}:$nodes start.sh
 roachprod put ${CLUSTER}:$nodes stop.sh
+roachprod put ${CLUSTER}:$nodes run.sh
+roachprod put ${CLUSTER}:$nodes target/pool-tool.jar
 
 echo ">> Starting client"
 roachprod run --insecure ${CLUSTER}:$nodes "./start.sh"

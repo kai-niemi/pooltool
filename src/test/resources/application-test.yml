@@ -4,7 +4,7 @@ spring:
     url: jdbc:postgresql://localhost:26257/defaultdb?sslmode=disable
     username: root
     password:
-    name: Pool Tool
+    name: PoolTool
     hikari:
       pool-name: pooltool
       connection-init-sql: SELECT 1
@@ -18,4 +18,4 @@ spring:
       transaction-isolation: TRANSACTION_SERIALIZABLE
       data-source-properties:
         reWriteBatchedInserts: true
-        application_name: Pool Tool
+        application_name: PoolTool

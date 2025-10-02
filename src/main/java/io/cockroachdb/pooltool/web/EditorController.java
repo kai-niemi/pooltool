@@ -68,7 +68,7 @@ public class EditorController {
         form.setNumInstances(1);
         form.setConnectionLifeTimeSeconds(300L);
         form.setMultiplier(Multiplier.X4);
-        form.setAppName("Pool Tool");
+        form.setAppName("PoolTool");
         form.setUserName("root");
         form.setPassword("");
         form.setUrl("jdbc:postgresql://localhost:26257/defaultdb?sslmode=disable");
