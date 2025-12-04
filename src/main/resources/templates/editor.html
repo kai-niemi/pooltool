@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>PoolTool :: Editor</title>
+    <title>Pool Tool :: Editor</title>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"></link>
     <link rel="stylesheet" type="text/css"
@@ -60,7 +60,12 @@
                     </svg>
                     Failure
                 </h4>
-                <p th:text="${testFailure}"></p>
+
+                <div class="form-floating">
+                    <textarea class="form-control bg-warning-subtle" style="height: 200px"
+                              th:text="${testFailure}" disabled></textarea>
+                </div>
+
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
 
@@ -159,12 +164,17 @@
                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="Reset configuration">Reset
                                 </button>
-
-                                <div class="vr"></div>
-
                                 <button name="action" value="apply" type="submit" class="btn btn-primary"
                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="Apply configuration profile to pool properties below">Apply
+                                </button>
+                                <button name="action" value="generate" type="submit" class="btn btn-info"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Generate application.yml">Generate
+                                </button>
+                                <button name="action" value="validate" type="submit" class="btn btn-warning"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Validate pool properties and execute test query">Validate
                                 </button>
                             </div>
                         </div>
@@ -395,7 +405,7 @@
 
                         <div class="row g-2 mb-2">
                             <div class="col-md">
-                                <label class="col-form-label">Select pin slot</label>
+                                <label class="col-form-label">Datasource slot</label>
                                 <div class="btn-group" role="group">
                                     <div th:each="s: ${configModel.slots}">
                                         <input class="btn-check" type="radio" autocomplete="off"
@@ -411,14 +421,6 @@
                                 <button name="action" value="pin" type="submit" class="btn btn-success"
                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                         title="Create a datasource and pin it to selected slot">Pin
-                                </button>
-                                <button name="action" value="validate" type="submit" class="btn btn-warning"
-                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Validate pool properties and execute test query">Test
-                                </button>
-                                <button name="action" value="generate" type="submit" class="btn btn-info"
-                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                        title="Generate application.yml">Generate
                                 </button>
                             </div>
                         </div>

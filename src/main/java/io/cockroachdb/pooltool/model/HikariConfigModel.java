@@ -32,12 +32,12 @@ public class HikariConfigModel extends HikariConfig {
         }
 
         config.setIdleTimeout(Duration.ofSeconds(model.getIdleTimeout()).toMillis());
+        config.setKeepaliveTime(Duration.ofSeconds(model.getKeepAliveTime()).toMillis());
         config.setMaxLifetime(Duration.ofSeconds(model.getMaxLifetime()).toMillis());
         config.setValidationTimeout(Duration.ofSeconds(model.getValidationTimeout()).toMillis());
         config.setConnectionTimeout(Duration.ofSeconds(model.getConnectionTimeout()).toMillis());
         config.setInitializationFailTimeout(Duration.ofSeconds(model.getInitializationFailTimeout()).toMillis());
         config.setConnectionTestQuery(model.getValidationQuery());
-
         config.setTransactionIsolation("TRANSACTION_" + model.getIsolation().name().toUpperCase());
         config.setAutoCommit(model.isAutoCommit());
         config.setReadOnly(model.isReadOnly());

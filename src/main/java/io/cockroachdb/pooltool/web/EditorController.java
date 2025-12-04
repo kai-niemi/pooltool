@@ -1,14 +1,17 @@
 package io.cockroachdb.pooltool.web;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.time.Duration;
 import java.util.EnumSet;
 import java.util.concurrent.Callable;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.format.annotation.DurationFormat;
+import org.springframework.format.datetime.standard.DurationFormatterUtils;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.Model;
 import org.springframework.util.Assert;
@@ -68,7 +71,7 @@ public class EditorController {
         form.setNumInstances(1);
         form.setConnectionLifeTimeSeconds(300L);
         form.setMultiplier(Multiplier.X4);
-        form.setAppName("PoolTool");
+        form.setAppName("Pool Tool");
         form.setUserName("root");
         form.setPassword("");
         form.setUrl("jdbc:postgresql://localhost:26257/defaultdb?sslmode=disable");
@@ -163,10 +166,11 @@ public class EditorController {
             return () -> "editor";
         }
 
+        Duration d = Duration.ofSeconds(configModel.getConnectionTimeout());
         messagePublisher.convertAndSend(TopicName.TOAST_MESSAGE,
-                Toast.of("Attempting to create datasource with connection timeout %s."
-                        .formatted(DurationUtils.durationToDisplayString(
-                                Duration.ofSeconds(configModel.getConnectionTimeout())))));
+                Toast.of("Validating datasource with connection timeout %s."
+                        .formatted(DurationFormatterUtils.print(d, DurationFormat.Style.SIMPLE))
+                ));
 
         return () -> {
             HikariConfigModel hikariConfig = toHikariModel(configModel);
@@ -190,15 +194,11 @@ public class EditorController {
                 Assert.state(query.toUpperCase().startsWith("SELECT "),
                         "Validation query must start with 'SELECT'");
 
-                //noinspection SqlSourceToSinkFlow
                 model.addAttribute("testSuccess", jdbcTemplate.queryForObject(query, String.class));
             } catch (Exception e) {
-                model.addAttribute("testFailure", e.getMessage());
-            }
-
-            if (bindingResult.hasErrors()) {
-                model.addAttribute("errors", bindingResult.getFieldErrors());
-                return "editor";
+                StringWriter sw = new StringWriter();
+                e.printStackTrace(new PrintWriter(sw, true));
+                model.addAttribute("testFailure", sw.toString());
             }
 
             model.addAttribute("configModel", configModel);
