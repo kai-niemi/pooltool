@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>io.cockroachdb.pooltool</groupId>
-    <artifactId>pool-tool</artifactId>
+    <artifactId>pooltool</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -27,9 +27,9 @@
     <inceptionYear>2025</inceptionYear>
 
     <scm>
-        <connection>scm:git:https://github.com/kai-niemi/pool-tool.git</connection>
-        <developerConnection>scm:git:https://github.com/kai-niemi/pool-tool.git</developerConnection>
-        <url>https://github.com/kai-niemi/pool-tool.git</url>
+        <connection>scm:git:https://github.com/kai-niemi/pooltool.git</connection>
+        <developerConnection>scm:git:https://github.com/kai-niemi/pooltool.git</developerConnection>
+        <url>https://github.com/kai-niemi/pooltool.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -51,7 +51,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/kai-niemi/pool-tool/issues</url>
+        <url>https://github.com/kai-niemi/pooltool/issues</url>
     </issueManagement>
 
     <dependencies>
@@ -197,7 +197,7 @@
     </dependencies>
 
     <build>
-        <finalName>pool-tool</finalName>
+        <finalName>pooltool</finalName>
 
         <plugins>
             <plugin>

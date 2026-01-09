@@ -41,7 +41,7 @@ roachprod run --insecure ${CLUSTER}:$nodes 'sudo apt-get -qq install -y openjdk-
 roachprod put ${CLUSTER}:$nodes start.sh
 roachprod put ${CLUSTER}:$nodes stop.sh
 roachprod put ${CLUSTER}:$nodes run.sh
-roachprod put ${CLUSTER}:$nodes target/pool-tool.jar
+roachprod put ${CLUSTER}:$nodes target/pooltool.jar
 
 echo ">> Starting client"
 roachprod run --insecure ${CLUSTER}:$nodes "./start.sh"
