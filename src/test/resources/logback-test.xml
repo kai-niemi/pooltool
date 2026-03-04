@@ -10,10 +10,10 @@
     <logger name="org.springframework.transaction.support" level="WARN"/>
     <logger name="org.springframework.transaction.interceptor" level="WARN"/>
 
-    <logger name="io.cockroachdb.pooltool" level="DEBUG" additivity="false">
+    <logger name="io.cockroachdb.config" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
-    <logger name="io.cockroachdb.pooltool.SQL_TRACE" level="TRACE" additivity="false">
+    <logger name="io.cockroachdb.config.SQL_TRACE" level="TRACE" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
     

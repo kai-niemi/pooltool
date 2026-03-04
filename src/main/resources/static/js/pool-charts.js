@@ -160,7 +160,7 @@ PoolChartsDashboard.prototype = {
 document.addEventListener('DOMContentLoaded', function () {
     new PoolChartsDashboard({
         endpoints: {
-            socket: '/pooltool-service',
+            socket: '/pool-configurer',
         },
 
         topics: {

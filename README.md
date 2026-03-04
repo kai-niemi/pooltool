@@ -1,4 +1,4 @@
-[![Java CI](https://github.com/kai-niemi/pooltool/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/kai-niemi/pooltool/actions/workflows/maven.yml)
+[![Java CI](https://github.com/kai-niemi/pool-configurer/actions/workflows/maven.yml/badge.svg?branch=main)](https://github.com/kai-niemi/pooltool/actions/workflows/maven.yml)
 
 <!-- TOC -->
 * [About](#about)
@@ -15,13 +15,12 @@
 
 <img  align="left" src="logo.png" alt="" width="32"/> 
 
-A visual Hikari Connection Pool configuration and sandbox testing
-tool for CockroachDB.
+A client-side Hikari connection pool configuration and testing tool for CockroachDB.
 
-Features:
+Key Features:
 
-- Editor for configuring pool properties using profiles
-- Run sample SQL workloads via JDBC
+- Editor for configuring optimal pool properties using profiles
+- Sample SQL workloads to test pool settings
 - Visualize pool and workload metrics
 
 Screenshot:
@@ -50,7 +49,7 @@ Ubuntu:
 
 ## Clone the project
 
-    git clone git@github.com:kai-niemi/pooltool && cd pooltool
+    git clone git@github.com:kai-niemi/pool-configurer && cd pool-configurer
 
 ## Build the artifact
 
@@ -59,7 +58,7 @@ Ubuntu:
 
 ## Running
 
-    java -jar target/pooltool.jar <args>
+    java -jar target/pc.jar <args>
 
 # Terms of Use
 

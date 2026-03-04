@@ -1,14 +1,14 @@
 #!/bin/bash
 
-pid=$(ps -ef | grep "java" | grep "pooltool.jar" | awk '{print $2}')
+pid=$(ps -ef | grep "java" | grep "pc.jar" | awk '{print $2}')
 if [ ! -x ${pid} ]; then
    echo -e "Existing process found (${pid}) - is it running?"
    exit 1
 fi
 
-app_jarfile=pooltool.jar
+app_jarfile=pc.jar
 if [ ! -f "$app_jarfile" ]; then
-    app_jarfile=target/pooltool.jar
+    app_jarfile=target/pc.jar
 fi
 
 if [ ! -f "$app_jarfile" ]; then

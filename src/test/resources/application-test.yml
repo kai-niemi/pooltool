@@ -4,9 +4,9 @@ spring:
     url: jdbc:postgresql://localhost:26257/defaultdb?sslmode=disable
     username: root
     password:
-    name: Pool Tool
+    name: Pool Configurer
     hikari:
-      pool-name: pooltool
+      pool-name: pool-conf
       connection-init-sql: SELECT 1
       initialization-fail-timeout: -1
       connection-timeout: 5000
@@ -18,4 +18,4 @@ spring:
       transaction-isolation: TRANSACTION_SERIALIZABLE
       data-source-properties:
         reWriteBatchedInserts: true
-        application_name: Pool Tool
+        ApplicationName: Pool Configurer

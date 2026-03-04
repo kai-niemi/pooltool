@@ -3,7 +3,7 @@
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
 
-    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}pooltool.log}"/>
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}pool_conf.log}"/>
     <include resource="org/springframework/boot/logging/logback/file-appender.xml"/>
 
     <appender name="ASYNC_FILE" class="ch.qos.logback.classic.AsyncAppender">
@@ -18,20 +18,20 @@
     <logger name="org.springframework.web" level="WARN"/>
 
     <springProfile name="verbose">
-        <logger name="io.cockroachdb.pooltool" level="DEBUG" additivity="false">
+        <logger name="io.cockroachdb.config" level="DEBUG" additivity="false">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="ASYNC_FILE"/>
         </logger>
     </springProfile>
 
     <springProfile name="!verbose">
-        <logger name="io.cockroachdb.pooltool" level="INFO" additivity="false">
+        <logger name="io.cockroachdb.config" level="INFO" additivity="false">
             <appender-ref ref="CONSOLE"/>
             <appender-ref ref="ASYNC_FILE"/>
         </logger>
     </springProfile>
 
-    <logger name="io.cockroachdb.pooltool.SQL_TRACE" level="DEBUG" additivity="false">
+    <logger name="io.cockroachdb.config.SQL_TRACE" level="DEBUG" additivity="false">
         <appender-ref ref="CONSOLE"/>
         <appender-ref ref="ASYNC_FILE"/>
     </logger>

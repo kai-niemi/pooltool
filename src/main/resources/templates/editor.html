@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Pool Tool :: Editor</title>
+    <title>Pool Configurer :: Editor</title>
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"></link>
     <link rel="stylesheet" type="text/css"
@@ -134,7 +134,7 @@
                                             data-bs-toggle="tooltip" data-bs-placement="top"
                                             title="Configuration strategy to use when calculating pool size and timeouts"
                                             aria-label="Default select">
-                                        <option th:each="cp : ${T(io.cockroachdb.pooltool.model.ConfigProfile).values()}"
+                                        <option th:each="cp : ${T(io.cockroachdb.pool.configurer.model.ConfigProfile).values()}"
                                                 th:value="${cp}"
                                                 th:text="${cp.displayValue}"></option>
                                     </select>
@@ -147,7 +147,7 @@
                             <div class="col-md">
                                 <label class="col-form-label">vCPU ratio</label>
                                 <div class="btn-group" role="group">
-                                    <div th:each="m: ${T(io.cockroachdb.pooltool.model.Multiplier).values()}">
+                                    <div th:each="m: ${T(io.cockroachdb.pool.configurer.model.Multiplier).values()}">
                                         <input class="btn-check" type="radio" autocomplete="off"
                                                data-bs-toggle="tooltip" data-bs-placement="top"
                                                title="vCPUs multiplier for max pool size"

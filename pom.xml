@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.0</version>
+        <version>4.0.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>io.cockroachdb.pooltool</groupId>
-    <artifactId>pooltool</artifactId>
+    <groupId>io.cockroachdb.pool</groupId>
+    <artifactId>pool-configurer</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -24,12 +24,12 @@
         <groups>unit-test</groups>
     </properties>
 
-    <inceptionYear>2025</inceptionYear>
+    <inceptionYear>2026</inceptionYear>
 
     <scm>
-        <connection>scm:git:https://github.com/kai-niemi/pooltool.git</connection>
-        <developerConnection>scm:git:https://github.com/kai-niemi/pooltool.git</developerConnection>
-        <url>https://github.com/kai-niemi/pooltool.git</url>
+        <connection>scm:git:https://github.com/kai-niemi/pool-config.git</connection>
+        <developerConnection>scm:git:https://github.com/kai-niemi/pool-config.git</developerConnection>
+        <url>https://github.com/kai-niemi/pool-config.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -51,7 +51,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/kai-niemi/pooltool/issues</url>
+        <url>https://github.com/kai-niemi/pool-config/issues</url>
     </issueManagement>
 
     <dependencies>
@@ -121,13 +121,13 @@
         <dependency>
             <groupId>org.jline</groupId>
             <artifactId>jline</artifactId>
-            <version>3.30.0</version>
+            <version>3.30.6</version>
         </dependency>
         <!--  Data -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.7.8</version>
+            <version>42.7.10</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
@@ -197,7 +197,7 @@
     </dependencies>
 
     <build>
-        <finalName>pooltool</finalName>
+        <finalName>pc</finalName>
 
         <plugins>
             <plugin>

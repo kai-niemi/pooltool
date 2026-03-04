@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 <head>
     <meta charset="UTF-8">
-    <title>Pool Tool</title>
+    <title>Pool Configurer</title>
 </head>
 <body>
 
@@ -13,7 +13,7 @@
                 <a th:href="@{/}"
                    class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none fs-4">
                     <img class="bi me-2" height="32" th:src="@{/images/logo_mark_white.png}">
-                    <strong>Connection Pool Tool</strong>
+                    <strong>Connection Pool Configurer</strong>
                 </a>
 
                 <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
@@ -60,7 +60,7 @@
                             <li class="dropend">
                                 <a class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown" href="#">Pool Metrics</a>
                                 <ul class="dropdown-menu dropdown-submenu shadow">
-                                    <li class="nav-item" th:each="s: ${T(io.cockroachdb.pooltool.model.Slot).values()}"
+                                    <li class="nav-item" th:each="s: ${T(io.cockroachdb.pool.configurer.model.Slot).values()}"
                                                          th:if="${s.isOccupied()}">
                                         <a th:href="@{/chart/pool(name=${s.name()})}" class="dropdown-item"
                                            th:text="${s.displayName}"></a></li>
@@ -90,7 +90,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a href="https://github.com/kai-niemi/pooltool" class="dropdown-item" target="_blank">Follow
+                            <li><a href="https://github.com/kai-niemi/pool-configurer" class="dropdown-item" target="_blank">Follow
                                 on Github</a></li>
                         </ul>
                     </li>

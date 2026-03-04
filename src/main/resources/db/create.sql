@@ -1,4 +1,4 @@
-create table if not exists pooltool_test
+create table if not exists pool_test
 (
     id        uuid                 default gen_random_uuid(),
     version   int         not null default 0,

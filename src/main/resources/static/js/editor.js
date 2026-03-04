@@ -58,7 +58,7 @@ EditorDashboard.prototype = {
 document.addEventListener('DOMContentLoaded', function () {
     new EditorDashboard({
         endpoints: {
-            socket: '/pooltool-service',
+            socket: '/pool-configurer',
         },
 
         topics: {

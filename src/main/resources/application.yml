@@ -7,21 +7,28 @@ spring:
     ansi:
       enabled: always
   profiles:
-    active:
+    active: default
   threads:
     virtual:
       enabled: true
   mvc:
     problemdetails:
       enabled: false
-
+  web:
+    error:
+      whitelabel:
+        enabled: false
+      include-stacktrace: always
+      include-message: always
+      include-binding-errors: always
+      include-exception: true
 #############################
 logging:
   pattern:
     console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:%-5p}) [%-11t] %clr([%-26logger{25}]){cyan} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
     file: "%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:%5p} [%t] %logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
   file:
-    name: .log/pooltool.log
+    name: .log/pool-config.log
   logback:
     rollingpolicy:
       max-history: 3
@@ -37,12 +44,3 @@ management:
 #############################
 server:
   port: 9090
-  error:
-    whitelabel:
-      enabled: false
-    path: /error
-    include-exception: true
-    include-message: always
-    include-stacktrace: always
-    include-binding-errors: always
-

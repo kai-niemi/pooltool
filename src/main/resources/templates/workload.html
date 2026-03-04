@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Pool Tool</title>
+    <title>Pool Configurer</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
     <link href="/webjars/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
@@ -179,7 +179,7 @@
                         <label for="workload-type" class="form-label">Type of workload:</label>
                         <select th:field="*{workloadType}" id="workload-type" class="form-select"
                                 aria-describedby="helpBlock">
-                            <option th:each="wt : ${T(io.cockroachdb.pooltool.workload.WorkloadType).values()}"
+                            <option th:each="wt : ${T(io.cockroachdb.pool.configurer.workload.WorkloadType).values()}"
                                     th:value="${wt}" th:text="${wt.displayValue + ' (' + wt.description + ')'}"></option>
                         </select>
                         <div id="helpBlock" class="form-text">

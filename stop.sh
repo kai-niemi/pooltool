@@ -1,9 +1,9 @@
 #!/bin/bash
 
-pid=$(ps -ef | grep "java" | grep "pooltool" | awk '{print $2}')
+pid=$(ps -ef | grep "java" | grep "pc.jar" | awk '{print $2}')
 
 if [ -x ${pid} ]; then
-   echo -e "No pooltool.jar process found - is it running?"
+   echo -e "No pc.jar process found - is it running?"
    exit 1
 fi
 
