@@ -28,7 +28,7 @@ logging:
     console: "%clr(%d{${LOG_DATEFORMAT_PATTERN:HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:%-5p}) [%-11t] %clr([%-26logger{25}]){cyan} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
     file: "%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:%5p} [%t] %logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}"
   file:
-    name: .log/pool-config.log
+    name: .log/pool-configurer.log
   logback:
     rollingpolicy:
       max-history: 3

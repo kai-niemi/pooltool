@@ -13,7 +13,7 @@
 
 # About
 
-<img  align="left" src="logo.png" alt="" width="32"/> 
+<img  align="left" src=".github/logo.png" alt="" width="48"/> 
 
 A client-side Hikari connection pool configuration and testing tool for CockroachDB.
 
@@ -25,7 +25,7 @@ Key Features:
 
 Screenshot:
 
-![demo.png](demo.png)
+![demo.png](.github/demo.png)
 
 ## Compatibility
 

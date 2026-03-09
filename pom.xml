@@ -27,9 +27,9 @@
     <inceptionYear>2026</inceptionYear>
 
     <scm>
-        <connection>scm:git:https://github.com/kai-niemi/pool-config.git</connection>
-        <developerConnection>scm:git:https://github.com/kai-niemi/pool-config.git</developerConnection>
-        <url>https://github.com/kai-niemi/pool-config.git</url>
+        <connection>scm:git:https://github.com/kai-niemi/pool-configurer.git</connection>
+        <developerConnection>scm:git:https://github.com/kai-niemi/pool-configurer.git</developerConnection>
+        <url>https://github.com/kai-niemi/pool-configurer.git</url>
         <tag>HEAD</tag>
     </scm>
 
@@ -51,7 +51,7 @@
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/kai-niemi/pool-config/issues</url>
+        <url>https://github.com/kai-niemi/pool-configurer/issues</url>
     </issueManagement>
 
     <dependencies>
